@@ -5,9 +5,7 @@ import com.woowup.alertsystem.domain.topic.TopicRepository;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public class InMemoryTopicRepository implements TopicRepository {
 
   private final Map<Long, Topic> topics;
@@ -29,5 +27,10 @@ public class InMemoryTopicRepository implements TopicRepository {
   @Override
   public Collection<Topic> findAll() {
     return this.topics.values();
+  }
+
+  @Override
+  public boolean exists(Long topicId) {
+    return this.topics.containsKey(topicId);
   }
 }

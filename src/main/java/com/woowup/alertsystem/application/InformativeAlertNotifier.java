@@ -1,14 +1,14 @@
 package com.woowup.alertsystem.application;
 
 import com.woowup.alertsystem.domain.alert.Alert;
-import com.woowup.alertsystem.domain.alert.AlertNotifierStrategy;
-import com.woowup.alertsystem.domain.topic.SubscriptionException;
+import com.woowup.alertsystem.domain.alert.AlertNotifier;
+import com.woowup.alertsystem.domain.subcription.NotSubscriberException;
 import com.woowup.alertsystem.domain.topic.Topic;
-import com.woowup.alertsystem.domain.topic.TopicSubscriptionsRepository;
+import com.woowup.alertsystem.domain.subcription.TopicSubscriptionsRepository;
 import com.woowup.alertsystem.domain.user.User;
 import java.time.LocalDateTime;
 
-public  class InformativeAlertNotifier implements AlertNotifierStrategy {
+public  class InformativeAlertNotifier implements AlertNotifier {
 
   private final TopicSubscriptionsRepository topicSubscriptionsRepository;
 
@@ -26,7 +26,7 @@ public  class InformativeAlertNotifier implements AlertNotifierStrategy {
   @Override
   public void sendAlert(Topic topic, LocalDateTime expiration, User user) {
     if(!topicSubscriptionsRepository.isSubscribed(topic.getTopicId(), user)) {
-      throw new SubscriptionException("the user must be subscribed to the topic");
+      throw new NotSubscriberException("the user must be subscribed to the topic");
     }
     user.update(new Alert(true, topic, expiration));
   }

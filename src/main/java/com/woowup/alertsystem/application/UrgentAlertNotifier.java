@@ -1,13 +1,13 @@
 package com.woowup.alertsystem.application;
 
 import com.woowup.alertsystem.domain.alert.Alert;
-import com.woowup.alertsystem.domain.alert.AlertNotifierStrategy;
+import com.woowup.alertsystem.domain.alert.AlertNotifier;
 import com.woowup.alertsystem.domain.topic.Topic;
 import com.woowup.alertsystem.domain.user.User;
 import com.woowup.alertsystem.domain.user.UserRepository;
 import java.time.LocalDateTime;
 
-public class UrgentAlertNotifier implements AlertNotifierStrategy {
+public class UrgentAlertNotifier implements AlertNotifier {
 
   private final UserRepository userRepository;
 

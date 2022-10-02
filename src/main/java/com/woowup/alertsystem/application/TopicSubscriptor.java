@@ -1,6 +1,6 @@
 package com.woowup.alertsystem.application;
 
-import com.woowup.alertsystem.domain.topic.TopicSubscriptionsRepository;
+import com.woowup.alertsystem.domain.subcription.TopicSubscriptionsRepository;
 import com.woowup.alertsystem.domain.user.User;
 import com.woowup.alertsystem.domain.user.UserRepository;
 

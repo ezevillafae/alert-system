@@ -1,4 +1,4 @@
-package com.woowup.alertsystem.domain.topic;
+package com.woowup.alertsystem.domain.subcription;
 
 import com.woowup.alertsystem.domain.user.User;
 import java.util.List;

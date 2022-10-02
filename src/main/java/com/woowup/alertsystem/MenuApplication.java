@@ -1,7 +1,7 @@
 package com.woowup.alertsystem;
 
 import com.woowup.alertsystem.application.AlertFinder;
-import com.woowup.alertsystem.application.AlertNotifier;
+import com.woowup.alertsystem.application.AlertSenderService;
 import com.woowup.alertsystem.application.AlertReader;
 import com.woowup.alertsystem.application.InformativeAlertNotifier;
 import com.woowup.alertsystem.application.TopicCreator;
@@ -12,7 +12,7 @@ import com.woowup.alertsystem.application.UserFinder;
 import com.woowup.alertsystem.application.UserRegister;
 import com.woowup.alertsystem.domain.topic.Topic;
 import com.woowup.alertsystem.domain.topic.TopicRepository;
-import com.woowup.alertsystem.domain.topic.TopicSubscriptionsRepository;
+import com.woowup.alertsystem.domain.subcription.TopicSubscriptionsRepository;
 import com.woowup.alertsystem.domain.user.User;
 import com.woowup.alertsystem.domain.user.UserRepository;
 import com.woowup.alertsystem.infrastructure.persistence.InMemoryTopicRepository;
@@ -31,7 +31,7 @@ public class MenuApplication {
   private final TopicSubscriptor topicSubscriptor;
   private final TopicFinder topicFinder;
 
-  private final AlertNotifier alertNotifier;
+  private final AlertSenderService alertSenderService;
   private final InformativeAlertNotifier informativeAlertNotifier;
   private final UrgentAlertNotifier urgentAlertNotifier;
   private final AlertFinder alertFinder;
@@ -49,7 +49,7 @@ public class MenuApplication {
     this.topicCreator = new TopicCreator(topicSubscriptionsRepository, topicRepository);
     this.topicSubscriptor = new TopicSubscriptor(topicSubscriptionsRepository, userRepository);
     this.topicFinder = new TopicFinder(topicRepository);
-    this.alertNotifier = new AlertNotifier();
+    this.alertSenderService = new AlertSenderService();
     this.informativeAlertNotifier = new InformativeAlertNotifier(topicSubscriptionsRepository);
     this.urgentAlertNotifier = new UrgentAlertNotifier(userRepository);
     this.alertFinder = new AlertFinder(userRepository);
@@ -85,34 +85,34 @@ public class MenuApplication {
   private void input() {
     scanner = new Scanner(System.in);
     int option = scanner.nextInt();
-    if(option == 1) {
+    if(option == OptionMenu.REGISTER_USER) {
       registerUser();
     }
-    if(option == 2) {
+    if(option == OptionMenu.REGISTER_TOPIC) {
       registerTopic();
     }
-    if(option == 3) {
+    if(option == OptionMenu.FIND_ALL_TOPICS) {
       findAllTopics();
     }
-    if(option == 4) {
+    if(option == OptionMenu.SUBSCRIBE) {
       subscribe();
     }
-    if(option == 5) {
+    if(option == OptionMenu.SEND_INFORMATIVE_ALERT) {
       sendAlertInformative();
     }
-    if(option == 6) {
+    if(option == OptionMenu.SEND_URGENT_ALERT) {
       sendUrgentAlert();
     }
-    if(option == 7) {
+    if(option == OptionMenu.FIND_USERNAME_ALERTS) {
       findAlertByUsername();
     }
-    if(option == 8) {
+    if(option == OptionMenu.FIND_TOPIC_ALERTS) {
       findAlertsByTopic();
     }
-    if(option == 9) {
+    if(option == OptionMenu.READ_ALERT) {
       readAlert();
     }
-    if(option == 10) {
+    if(option == OptionMenu.EXIT) {
       exit = true;
     }
   }
@@ -162,12 +162,12 @@ public class MenuApplication {
     System.out.println("[2] Send informative alert to one user");
     int option = scanner.nextInt();
     if(option == 1) {
-      alertNotifier.sendAlert(topic, expiration, informativeAlertNotifier);
+      alertSenderService.sendAlert(topic, expiration, informativeAlertNotifier);
     }
     if(option == 2) {
       System.out.println("write username");
       User user = userFinder.find(scanner.next());
-      alertNotifier.sendAlert(topic, expiration, user, informativeAlertNotifier);
+      alertSenderService.sendAlert(topic, expiration, user, informativeAlertNotifier);
     }
   }
 
@@ -181,12 +181,12 @@ public class MenuApplication {
     System.out.println("[2] Send Urgent alert to one user");
     int option = scanner.nextInt();
     if(option == 1) {
-      alertNotifier.sendAlert(topic, expiration, urgentAlertNotifier);
+      alertSenderService.sendAlert(topic, expiration, urgentAlertNotifier);
     }
     if(option == 2) {
       System.out.println("write username");
       User user = userFinder.find(scanner.next());
-      alertNotifier.sendAlert(topic, expiration, user, urgentAlertNotifier);
+      alertSenderService.sendAlert(topic, expiration, user, urgentAlertNotifier);
     }
   }
 

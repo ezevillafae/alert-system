@@ -1,14 +1,12 @@
 package com.woowup.alertsystem.infrastructure.persistence;
 
-import com.woowup.alertsystem.domain.topic.TopicSubscriptionsRepository;
+import com.woowup.alertsystem.domain.subcription.TopicSubscriptionsRepository;
 import com.woowup.alertsystem.domain.user.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public class InMemoryTopicSubscriptionRepository implements TopicSubscriptionsRepository {
 
   private final Map<Long, List<User>> subscriptions;

@@ -11,15 +11,15 @@ import com.woowup.alertsystem.application.InformativeAlertNotifier;
 import com.woowup.alertsystem.common.LocalDateTimeMother;
 import com.woowup.alertsystem.common.TopicMother;
 import com.woowup.alertsystem.common.UserMother;
-import com.woowup.alertsystem.domain.topic.SubscriptionException;
+import com.woowup.alertsystem.domain.subcription.NotSubscriberException;
 import com.woowup.alertsystem.domain.topic.Topic;
-import com.woowup.alertsystem.domain.topic.TopicSubscriptionsRepository;
+import com.woowup.alertsystem.domain.subcription.TopicSubscriptionsRepository;
 import com.woowup.alertsystem.domain.user.User;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class InformativeAlertNotifierTest {
+class InformativeAlertSenderServiceTest {
 
   private InformativeAlertNotifier informativeAlertNotifier;
 
@@ -60,7 +60,7 @@ class InformativeAlertNotifierTest {
     given(topicSubscriptionsRepository.isSubscribed(topic.getTopicId(), userSubscript)).willReturn(
         false);
 
-    assertThrows(SubscriptionException.class,
+    assertThrows(NotSubscriberException.class,
         () -> informativeAlertNotifier.sendAlert(topic, LocalDateTimeMother.futureDateTime(),
             userSubscript));
   }

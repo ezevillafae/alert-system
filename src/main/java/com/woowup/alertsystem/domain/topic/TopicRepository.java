@@ -10,4 +10,6 @@ public interface TopicRepository {
 
   Collection<Topic> findAll();
 
+  boolean exists(Long topicId);
+
 }
