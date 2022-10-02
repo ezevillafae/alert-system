@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="alert-system:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79666b53-25da-42d8-b89b-16a1ce8cbd7f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/alert_system_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/OptionMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/topic/TopicAlreadyExistsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/MenuApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/MenuApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/AlertNotifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/AlertSenderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/InformativeAlertNotifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/InformativeAlertNotifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/TopicCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/TopicCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/TopicSubscriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/TopicSubscriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/UrgentAlertNotifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/UrgentAlertNotifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/UserRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/application/UserRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/alert/AlertNotifierStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/alert/AlertNotifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/topic/SubscriptionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/subcription/NotSubscriberException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/topic/TopicRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/topic/TopicRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/topic/TopicSubscriptionsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/domain/subcription/TopicSubscriptionsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/infrastructure/persistence/InMemoryTopicRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/infrastructure/persistence/InMemoryTopicRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/infrastructure/persistence/InMemoryTopicSubscriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/infrastructure/persistence/InMemoryTopicSubscriptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/infrastructure/persistence/InMemoryUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/woowup/alertsystem/infrastructure/persistence/InMemoryUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/woowup/alertsystem/aplication/InformativeAlertNotifierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/woowup/alertsystem/aplication/InformativeAlertSenderServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/woowup/alertsystem/aplication/TopicCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/woowup/alertsystem/aplication/TopicCreatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/woowup/alertsystem/aplication/UrgentAlertNotifierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/woowup/alertsystem/aplication/UrgentAlertSenderServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +65,7 @@
       <recent name="com.woowup.alertsystem.infrastructure" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Starter">
+  <component name="RunManager" selected="JUnit.com.woowup.alertsystem in alert-system">
     <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.woowup.alertsystem.Starter" />
       <module name="alert-system" />
@@ -157,8 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Starter" />
         <item itemvalue="JUnit.com.woowup.alertsystem in alert-system" />
+        <item itemvalue="Application.Starter" />
         <item itemvalue="JUnit.TopicCreatorTest.should_save_topic_when_exists" />
         <item itemvalue="JUnit.TopicCreatorTest" />
         <item itemvalue="JUnit.InformativeAlertSenderServiceTest.should_not_receive_alert_when_user_is_not_subscribed" />
@@ -180,7 +165,7 @@
       <workItem from="1664546095859" duration="5550000" />
       <workItem from="1664632442942" duration="17805000" />
       <workItem from="1664657852532" duration="20971000" />
-      <workItem from="1664709468133" duration="13000000" />
+      <workItem from="1664709468133" duration="14633000" />
     </task>
     <servers />
   </component>
